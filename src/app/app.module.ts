@@ -1,8 +1,12 @@
-import { NgModule } from '@angular/core';
+import { NgModule,ViewChild } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
+import { TreeGridModule } from '@syncfusion/ej2-angular-treegrid';
+import { PageService, SortService, FilterService } from '@syncfusion/ej2-angular-treegrid';
 import { AppComponent } from './app.component';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 @NgModule({
   declarations: [
@@ -10,9 +14,13 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    TreeGridModule,
+    ButtonModule,
+    BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [PageService,
+    SortService,
+    FilterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
